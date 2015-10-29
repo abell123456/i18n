@@ -11,7 +11,20 @@ readDir(function(filesPaths){
     fs.open(I18N_PATH+"/i18n.js", "w", 0644, function(e,fd){
         if(e)throw e;
 
-        concatStr(filesPaths, fd);
+        concatStr(filesPaths, fd);// 英语（美国）
+        module.exports = {
+            sideBarTitle: 'Premium Related Products',
+            bottomBarTitle: 'Premium Related Products',
+            goldSupplier: {
+                showText: 'Gold Supplier',
+                tipText: 'What is Gold Supplier?'
+            },
+            atmTexts: {
+                showText: ['Chat Now!', 'Leave Messages', 'Chat Now!', 'Chat Now!'],
+                tipText: ['Chat with the supplier on TradeManager', 'Please Leave a Message', 'Chat with the supplier on TradeManager', 'Chat with the supplier on TradeManager']
+            }
+        };
+
     });
 });
 
