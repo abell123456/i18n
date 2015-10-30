@@ -1,5 +1,4 @@
-var thunkify = require('thunkify'),
-    fs = require('fs'),
+var fs = require('fs'),
     readDir = require('./src/read-dir'),
     path = require('path');
 
@@ -36,21 +35,6 @@ function concatStr(filesPaths, fd) {
 
         mapStr += '\n"' + file.name + '": "' + file.name + '"' + (isLast ? '\r};' : ',');
 
-        /**
-         // 老旧的实现
-         readFile(filesPaths[index], 'utf-8')(function(err, data){
-            if(err){
-                throw err;
-            }
-            i18nStr += '\n"'+file.name+'": '+getModule(data)+(isLast?'\r};':',');
-
-         if(isLast){
-                fs.write(fd, mapStr.replace(/\n/g, '\n    ') + '\n\n' +i18nStr.replace(/\n/g, '\n    ') + '\n\n' + last, function(e){
-                    if(e)throw e;
-                    fs.closeSync(fd);
-                });
-            }
-         });*/
         i18nStr +=
             '\n"' + file.name + '": ' +
             JSON.stringify(require(filesPaths[index])) + (isLast ? '\r}' : ',');
