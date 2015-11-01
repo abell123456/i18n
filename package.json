@@ -1,18 +1,20 @@
 {
-  "name": "i18n",
-  "version": "1.0.0",
-  "description": "a solution to multiple languages",
-  "main": "index.js",
-  "dependencies": {
-    "thunkify": "^2.1.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-
-  },
-  "keywords": [
-    "i18n"
-  ],
-  "author": "xiangzhong.wxz",
-  "license": "MIT"
+    "name": "i18n",
+    "version": "1.0.0",
+    "description": "a solution to multiple languages",
+    "main": "index.js",
+    "dependencies": {
+        "thunkify": "^2.1.2"
+    },
+    "devDependencies": {
+        "husky": "^0.10.1"
+    },
+    "scripts": {
+        "precommit": "npm test"
+    },
+    "keywords": [
+        "i18n"
+    ],
+    "author": "xiangzhong.wxz",
+    "license": "MIT"
 }
