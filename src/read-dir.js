@@ -1,11 +1,12 @@
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 module.exports = function(path, cb) {
     var allFiles = [];
 
     if (typeof path === 'function') {
         cb = path;
-        path = __dirname + '/i18n';
+        path = path.join(__dirname, 'i18n');
     }
 
     explorer(path);
@@ -20,7 +21,7 @@ module.exports = function(path, cb) {
 
             // 文件列表
             files.forEach(function(file, index) {
-                var filePath = path + '/' + file;
+                var filePath = path.join(path, file);
 
                 fs.stat(filePath, function(err, stat) {
                     if (err) {
