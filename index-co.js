@@ -6,10 +6,10 @@ var thunkify = require('thunkify'),
     getModule = require('./src/get-module'),
     path = require('path');
 
-var I18N_PATH = __dirname + '/src';
+var I18N_PATH = path.join(__dirname, 'src');
 
 readDir(function(filesPaths) {
-    fs.open(I18N_PATH + "/i18n.js", "w", 0644, function(e, fd) {
+    fs.open(path.join(I18N_PATH, "i18n.js"), "w", 0644, function(e, fd) {
         if (e) throw e;
 
         concatStr(filesPaths, fd);
