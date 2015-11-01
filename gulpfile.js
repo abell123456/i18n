@@ -4,8 +4,7 @@ var jslint = require('gulp-jslint'),
 
 gulp.task('jslint', function() {
 	return gulp.src([
-		'./controllers/*.js',
-		'./models/*.js',
+		'./src/*.js',
 		'./*.js'
 	]).pipe(jslint({
 		node: true,
