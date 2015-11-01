@@ -7,10 +7,12 @@
         "thunkify": "^2.1.2"
     },
     "devDependencies": {
-        "husky": "^0.10.1"
+        "husky": "^0.10.1",
+        "gulp-jslint": "*",
+        "gulp": "^3.6.2"
     },
     "scripts": {
-        "precommit": "npm test"
+        "precommit": "node ./gulpfile.js"
     },
     "keywords": [
         "i18n"
